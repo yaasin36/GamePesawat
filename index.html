@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
     <!-- Favicon merujuk langsung ke favicon.png di folder yang sama dengan index.html -->
-    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="icon" type="image/png" href="./favicon">
     <link rel="shortcut icon" type="image/png" href="./favicon.png">
     <link rel="apple-touch-icon" href="./favicon.png">
     <style>
@@ -100,20 +100,20 @@
 
             <!-- Panel Pertanyaan -->
             <div id="question-box" class="w-full max-w-2xl glass-panel rounded-3xl p-4 sm:p-5 shadow-2xl text-center transform transition-all duration-300">
-                <p class="text-xs font-bold text-sky-600 uppercase tracking-widest mb-1">💻 Kuis Informatika SMP — Arahkan Pesawatmu!</p>
+                <p class="text-xs font-bold text-sky-600 uppercase tracking-widest mb-1">💻 Kuis Informatika — Arahkan Pesawatmu!</p>
                 <h2 id="question-text" class="text-lg sm:text-2xl font-extrabold text-slate-800 leading-snug">
-                    Otak dari komputer yang memproses seluruh instruksi disebut...
+                    Memecah masalah kompleks menjadi bagian kecil disebut...
                 </h2>
                 
                 <!-- Indikator Pilihan Kiri & Kanan di UI agar makin jelas -->
                 <div class="grid grid-cols-2 gap-3 sm:gap-4 mt-3 pt-3 border-t-2 border-slate-200/80">
                     <div id="ui-choice-left" class="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-blue-100/90 border-2 border-blue-400 text-blue-900 font-bold text-xs sm:text-base transition-transform">
                         <span>⬅️ Kiri:</span>
-                        <span id="text-choice-left" class="font-display text-base sm:text-lg">CPU</span>
+                        <span id="text-choice-left" class="font-display text-base sm:text-lg">Dekomposisi</span>
                     </div>
                     <div id="ui-choice-right" class="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-amber-100/90 border-2 border-amber-400 text-amber-900 font-bold text-xs sm:text-base transition-transform">
                         <span>Kanan: ➡️</span>
-                        <span id="text-choice-right" class="font-display text-base sm:text-lg">Monitor</span>
+                        <span id="text-choice-right" class="font-display text-base sm:text-lg">Abstraksi</span>
                     </div>
                 </div>
             </div>
@@ -127,7 +127,7 @@
                         <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
                     </svg>
                 </div>
-                <h1 class="text-2xl sm:text-3xl font-bold text-slate-800">SkyQuiz 3D: Informatika SMP</h1>
+                <h1 class="text-2xl sm:text-3xl font-bold text-slate-800">SkyQuiz 3D: Informatika</h1>
                 <p class="text-slate-600 mb-4 text-xs sm:text-sm font-semibold">Terbangkan pesawat menembus gerbang jawaban yang benar. Salah pilih = Meledak! 💥</p>
 
                 <!-- Input Nama Pemain -->
@@ -304,29 +304,31 @@
         }
 
         /* ==========================================
-         * BANK SOAL INFORMATIKA SMP
+         * BANK SOAL INFORMATIKA SMP (22 SOAL BARU)
          * ========================================== */
         let INFORMATIKA_QUESTIONS = [
-            { q: "Otak dari komputer yang memproses seluruh instruksi disebut...", correct: "CPU (Processor)", wrong: "Monitor" },
-            { q: "Manakah yang termasuk perangkat keras masukan (Input Device)?", correct: "Keyboard & Mouse", wrong: "Speaker & Printer" },
-            { q: "Memori komputer yang sifatnya sementara dan hilang saat listrik mati adalah...", correct: "RAM", wrong: "Harddisk" },
-            { q: "Sistem bilangan biner hanya menggunakan dua angka, yaitu...", correct: "0 dan 1", wrong: "1 dan 2" },
-            { q: "Nilai desimal dari bilangan biner 1010 adalah...", correct: "10", wrong: "12" },
-            { q: "Urutan langkah-langkah logis dan sistematis untuk menyelesaikan masalah disebut...", correct: "Algoritma", wrong: "Topologi" },
-            { q: "Di Microsoft Excel, setiap penulisan rumus atau formula wajib diawali tanda...", correct: "= (Sama Dengan)", wrong: "# (Tanda Pagar)" },
-            { q: "Fungsi di Microsoft Excel untuk menghitung nilai RATA-RATA adalah...", correct: "AVERAGE", wrong: "SUM" },
-            { q: "Fungsi di Microsoft Excel untuk menjumlahkan sekumpulan angka adalah...", correct: "SUM", wrong: "MAX" },
-            { q: "Jaringan komputer yang hanya mencakup satu ruangan atau gedung sekolah disebut...", correct: "LAN", wrong: "WAN" },
-            { q: "Manakah di bawah ini yang merupakan Sistem Operasi (Operating System)?", correct: "Windows & Linux", wrong: "Microsoft Word" },
-            { q: "Memecah masalah besar menjadi bagian-bagian lebih kecil dalam Berpikir Komputasional disebut...", correct: "Dekomposisi", wrong: "Enkripsi" },
-            { q: "Menyaring bagian penting dan mengabaikan detail tidak relevan dalam Berpikir Komputasional adalah...", correct: "Abstraksi", wrong: "Kompilasi" },
-            { q: "Upaya penipuan mencuri kata sandi lewat tautan palsu yang mirip situs asli disebut...", correct: "Phishing", wrong: "Debugging" },
-            { q: "Pintasan keyboard (shortcut) untuk menyalin (Copy) teks atau objek adalah...", correct: "Ctrl + C", wrong: "Ctrl + V" },
-            { q: "Pintasan keyboard (shortcut) untuk menempelkan (Paste) hasil salinan adalah...", correct: "Ctrl + V", wrong: "Ctrl + X" },
-            { q: "Perangkat keluaran (Output Device) yang berfungsi mencetak dokumen ke kertas adalah...", correct: "Printer", wrong: "Scanner" },
-            { q: "Aplikasi yang digunakan untuk menjelajahi halaman web di internet disebut...", correct: "Web Browser", wrong: "Spreadsheet" },
-            { q: "Ekstensi file standar untuk dokumen Microsoft Word modern adalah...", correct: ".docx", wrong: ".xlsx" },
-            { q: "Dalam pemrograman Scratch, blok perintah untuk mengulang instruksi disebut...", correct: "Loop (Repeat)", wrong: "Variable" }
+            { q: "Memecah masalah kompleks menjadi bagian kecil disebut...", correct: "Dekomposisi", wrong: "Abstraksi" },
+            { q: "Fokus pada informasi penting dan mengabaikan detail tidak relevan disebut...", correct: "Abstraksi", wrong: "Algoritma" },
+            { q: "Mencari kesamaan atau keteraturan dalam masalah disebut...", correct: "Pengenalan Pola", wrong: "Dekomposisi" },
+            { q: "Urutan langkah logis dan sistematis untuk menyelesaikan masalah disebut...", correct: "Algoritma", wrong: "Pengenalan Pola" },
+            { q: "Membagi kepanitiaan sekolah menjadi beberapa divisi adalah contoh...", correct: "Dekomposisi", wrong: "Algoritma" },
+            { q: "Mengabaikan warna rumah saat melihat rute di Google Maps adalah contoh...", correct: "Abstraksi", wrong: "Dekomposisi" },
+            { q: "Menebak jadwal bus dari pengamatan jadwal seminggu terakhir adalah contoh...", correct: "Pengenalan Pola", wrong: "Abstraksi" },
+            { q: "Urutan langkah memasak pada bungkus mie instan adalah contoh...", correct: "Algoritma", wrong: "Pengenalan Pola" },
+            { q: "Memeriksa kembali keefektifan solusi yang telah dibuat disebut tahap...", correct: "Evaluasi solusi", wrong: "Dekomposisi masalah" },
+            { q: "Proses menyebarluaskan konten digital ke audiens disebut...", correct: "Diseminasi", wrong: "Pra-produksi" },
+            { q: "Tahap pembuatan ide, konsep, dan storyboard disebut...", correct: "Pra-produksi", wrong: "Pasca-produksi" },
+            { q: "Tahap pengambilan gambar (shooting) dan rekaman suara disebut...", correct: "Produksi", wrong: "Pra-produksi" },
+            { q: "Tahap editing video dan penambahan efek visual disebut...", correct: "Pasca-produksi", wrong: "Produksi" },
+            { q: "Aplikasi yang digunakan untuk editing video adalah...", correct: "CapCut", wrong: "Adobe Lightroom" },
+            { q: "Aplikasi untuk membuat desain poster dan infografis adalah...", correct: "Canva", wrong: "Audacity" },
+            { q: "Aplikasi khusus untuk editing dan perekaman suara (audio) adalah...", correct: "Audacity", wrong: "Canva" },
+            { q: "Aplikasi untuk editing dan koreksi warna foto adalah...", correct: "Adobe Lightroom", wrong: "CapCut" },
+            { q: "Aplikasi pembuat naskah konten berbasis dokumen teks adalah...", correct: "Google Docs", wrong: "CapCut" },
+            { q: "Platform diseminasi khusus untuk konten video berdurasi panjang adalah...", correct: "YouTube", wrong: "Spotify" },
+            { q: "Platform diseminasi khusus untuk konten podcast atau audio adalah...", correct: "Spotify", wrong: "Pinterest" },
+            { q: "Perangkat keras (hardware) untuk merekam suara saat membuat konten adalah...", correct: "Mikrofon", wrong: "Proyektor" },
+            { q: "Karya orang lain yang dilindungi hukum dan tidak boleh dibajak memiliki...", correct: "Hak Cipta", wrong: "Malware" }
         ];
 
         /* ==========================================
@@ -527,7 +529,7 @@
         const GAME_CONFIG = {
             speed: 44,
             scorePerQ: 100,
-            totalQ: 1
+            totalQ: 10 // Ubah ke 1 jika ingin tes cepat menang 1 soal, atau 10 / 22 untuk bermain normal
         };
 
         let gameState = 'MENU';
@@ -1578,9 +1580,9 @@
                 if (badge) badge.textContent = 'Memuat Sheet...';
                 google.script.run
                     .withSuccessHandler(function(data) {
-                        if (data && Array.isArray(data.questions) && data.questions.length >= 5) {
+                        if (data && Array.isArray(data.questions) && data.questions.length >= 1) {
                             INFORMATIKA_QUESTIONS = data.questions;
-                            GAME_CONFIG.totalQ = Math.min(10, INFORMATIKA_QUESTIONS.length);
+                            GAME_CONFIG.totalQ = Math.min(GAME_CONFIG.totalQ, INFORMATIKA_QUESTIONS.length);
                         }
                         if (data && Array.isArray(data.leaderboard)) {
                             gameHistoryList = deduplicateAndSortHistory([...data.leaderboard, ...gameHistoryList]);
@@ -1603,9 +1605,9 @@
                 fetch(`${gasUrl}?action=init`, { method: 'GET' })
                     .then(res => res.json())
                     .then(data => {
-                        if (data && Array.isArray(data.questions) && data.questions.length >= 5) {
+                        if (data && Array.isArray(data.questions) && data.questions.length >= 1) {
                             INFORMATIKA_QUESTIONS = data.questions;
-                            GAME_CONFIG.totalQ = Math.min(10, INFORMATIKA_QUESTIONS.length);
+                            GAME_CONFIG.totalQ = Math.min(GAME_CONFIG.totalQ, INFORMATIKA_QUESTIONS.length);
                         }
                         if (data && Array.isArray(data.leaderboard)) {
                             gameHistoryList = deduplicateAndSortHistory([...data.leaderboard, ...gameHistoryList]);
